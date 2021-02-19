@@ -34,26 +34,22 @@ if result == 'OK':
         if result == 'OK':
             #Obtenemos todo el mensaje
             email_message_raw = email.message_from_bytes(data[0][1])
-
             #Leemos los datos que vamos a insertar en la base de datos, de, fecha y asunto
             email_from = str(make_header(
                 decode_header(email_message_raw['From'])))
-
             email_fecha = str(make_header(
                 decode_header(email_message_raw['Date'])))
-
             email_asunto = str(make_header(
                 decode_header(email_message_raw['Subject'])))
-
-            #inicializamos variable que contiene los 3 datos, de, fecha y asunto.
+            #Se concatenan las tres variables de, fecha y asunto, para construir la variable unique_id. 
             unique_id = email_from + email_asunto + email_fecha #+ cuerpo_del_email_SIN_fecha
-            #Sacamos hash md5 para identificar cada correo en BD y asi evitar que no hayan registros repetidos
+            #Se usa el algoritmo hash md5 por cada correo, para evitar que hayan registros duplicados.
             unique_id = (hashlib.md5(unique_id.encode())).hexdigest()
             #En el siguiente condicional, filtramos los correos que tengan en su contenido la palabra risk.
             if 'risk' in str(email_message_raw).lower().split():
-                #Insertamos las variable en nuestra BD, aclarando que el parametro ignore, evita que el registro no sea duplicado.
+                #insertamos las variables de, fecha y asunto en nuestra tabla merli de la BD, aclarando que el parametro ignore, evita que el registro sea duplicado.
                 sql = ("INSERT IGNORE INTO merli(hid, nombre, fecha, asunto) VALUES(%s, %s, %s,%s)",(unique_id, email_from, email_fecha, email_asunto)) 
-                #ejecutamos el query
+                #Ejecutamos el query
                 cur.execute(*sql)
                 mydb.commit()
 
