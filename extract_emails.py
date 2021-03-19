@@ -10,7 +10,7 @@ import mysql.connector
 
 #Conectar con el servidor de correo
 HOST     = 'imap.gmail.com'
-USERNAME = 'm3rl12021@gmail.com'
+USERNAME = '2021@gmail.com'
 PASSWORD = ''
 
 #Conectar con la base de datos.
@@ -53,6 +53,6 @@ if result == 'OK':
                 cur.execute(*sql)
                 mydb.commit()
 
-# Close server connection
+# Cierro conexión server
 m.close()
 m.logout()
