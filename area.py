@@ -60,4 +60,4 @@ try:
         print("\n")
 
 except ValueError:
-    print ('Recuerden ingresar solo numeros')
+    print ('Recuerda ingresar solo numeros')
