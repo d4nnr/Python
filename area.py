@@ -44,7 +44,7 @@ elif fig == 3:
     h = int(input("Ahora ingresa el valor de la altura: "))
     ok = b*h/2
     print("\n")
-    print("Bien, el área del cuadrado es", ok)
+    print("Bien, el área es", ok)
     print("\n")
 
 elif fig == 4:   
@@ -55,5 +55,5 @@ elif fig == 4:
     R = int(input("ingresa el valor del radio: "))
     ok = math.pi*R**2
     print("\n")
-    print("Bien, el área del cuadrado es", ok)
+    print("Bien, el área es", ok)
     print("\n")
