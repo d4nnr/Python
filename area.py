@@ -58,6 +58,9 @@ try:
         print("\n")
         print("Bien, el área del cuadrado es", ok)
         print("\n")
+    
+    else :
+        print("esa opcion no existe!")
 
 except ValueError:
-    print ('Recuerda ingresar solo numeros')
+    print ('Ingresa el valo esperado.')
