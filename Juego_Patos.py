@@ -3,6 +3,7 @@
 # Un cazador de patos y su fiel perro de caza están agazapados a la espera de un objetivo. 
 # Al ver determinada cantidad de patos el perro le indica al cazador la cantidad de patos que ve, 
 # y la cantidad de patas totales. Luego el cazador dispara 1 bala a cada uno y se escuchan caer al agua los objetivos.
+# @D4nnR
 from sys import argv
 import math
 try:
@@ -11,8 +12,7 @@ try:
     2. Cazar
     """))
     n = int(input("""Ingresa la cantidad de patos: """))  
-    i=[]
-    if n > 0:  
+    if n > 0:
         if q == 1:
                 if n==1:
                     print("Elegiste", n, "Pato")
