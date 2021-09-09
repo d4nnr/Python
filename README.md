@@ -1,7 +1,8 @@
-# Estructura de Datos en Python
+# Scripts Python
 
 Aquí encontraras diferentes ejercicios realizados en python.
 
 - Colas
 - Pilas
 - Árboles Binarios
+- Otros
